@@ -1,0 +1,10 @@
+name: progo
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - fastai
+  - jupyterlab
+  - autopep8
+  - skorch
+prefix: /home/cstrauss/anaconda3/envs/progo
