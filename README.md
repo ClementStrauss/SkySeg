@@ -22,3 +22,11 @@ python createBinaryMaskImagesFromCoco.py
 ## AutoGrabCut_Cpp
 - Computer vision based sky segmentation, run near real time on 720p video  
 - Developped in C++, need to be compiled. Instructions included in folder    
+
+
+### Paper of interest
+https://github.com/xuebinqin/U-2-Net
+https://google.github.io/sky-optimization/
+https://github.com/xiongzhu666/Sky-Segmentation-and-Post-processing
+
+https://github.com/CSAILVision/semantic-segmentation-pytorch
