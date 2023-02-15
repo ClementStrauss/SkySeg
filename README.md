@@ -20,5 +20,5 @@ python createBinaryMaskImagesFromCoco.py
 ```
   
 ## AutoGrabCut_Cpp
-Computer vision based sky segmentation, run near real time on 720p video 
-developped in C++, need to be compiled. Instructions are included
+- Computer vision based sky segmentation, run near real time on 720p video  
+- Developped in C++, need to be compiled. Instructions included in folder    
