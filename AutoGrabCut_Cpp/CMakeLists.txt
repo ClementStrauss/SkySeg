@@ -8,9 +8,16 @@ project(
     DESCRIPTION "An example project with CMake"
     LANGUAGES CXX)
 
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+
 find_package(OpenCV REQUIRED)
 
-add_executable(${PROJECT_NAME} "main.cpp")
+file (GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.cpp")
+file (GLOB_RECURSE HEADERS CONFIGURE_DEPENDS "src/*.h")
+
+add_executable(${PROJECT_NAME} "main.cpp" "utils.cpp")
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
 
