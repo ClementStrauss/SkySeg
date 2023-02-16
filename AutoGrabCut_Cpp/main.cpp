@@ -116,7 +116,14 @@ public:
              true, // the histogram is uniform
              false);
 
-    normalize(hist, hist, 0, 255, NORM_MINMAX, -1, Mat());
+    // normalize histogram 0 - 255
+    int maskArea = countNonZero(mask);
+    hist = (hist * 255) / maskArea;
+    
+    Mat histVisu;
+    resize(hist, histVisu, {256, 256}, 0, 0, INTER_LINEAR);
+    normalize(histVisu, histVisu, 0, 255, NORM_MINMAX, -1, Mat());
+    imshow("hist", histVisu);
 
     Mat backproj;
     calcBackProject(&image, 1, channels, hist, backproj, ranges, 1, true);
