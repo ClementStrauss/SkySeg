@@ -13,7 +13,7 @@
 using namespace std;
 using namespace cv;
 
-// #define _DEBUG
+#define _DEBUG
 
 struct AutoGrabCut
 {
@@ -184,7 +184,7 @@ public:
     imshowDebug("edges", edges);
 
     int pyramideScale1 = scaling;
-    int pyramideScale2 = scaling;
+    int pyramideScale2 = scaling/2;
 
     resize(imageInputBGR, bgrSmall, {imageInputBGR.cols / pyramideScale1, imageInputBGR.rows / pyramideScale1}, 0, 0, INTER_LINEAR);
     // blur(bgrSmall, bgrSmall, {3, 3});

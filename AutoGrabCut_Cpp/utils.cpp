@@ -27,7 +27,7 @@ Mat getImageWithMaskOverlay(const Mat &image, Mat mask, Scalar color)
 
     if (mask.cols != image.cols || mask.rows != image.rows)
     {
-      resize(mask, mask, {image.cols, image.rows}, 0, 0, INTER_LINEAR);
+      resize(mask, mask, {image.cols, image.rows}, 0, 0, INTER_NEAREST);
     }
 
     mask = mask & 0x01; // select both GC_FGD    = 1 and  GC_PR_FGD = 3
