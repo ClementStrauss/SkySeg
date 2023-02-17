@@ -4,3 +4,5 @@
 /AutoGrabCut_Cpp/build/**
 /01_CV/models/**
 /AutoGrabCut_Cpp/.vscode/**
+/00_Dataset/ADE20KSky/*
+/00_Dataset/ADE20kSky/*
