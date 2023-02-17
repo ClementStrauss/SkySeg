@@ -12,7 +12,11 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
+#set_property(TARGET example-app PROPERTY CXX_STANDARD 17)
+
 find_package(OpenCV REQUIRED)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
 file (GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 file (GLOB_RECURSE HEADERS CONFIGURE_DEPENDS "src/*.h")
@@ -22,3 +26,5 @@ add_executable(${PROJECT_NAME} "main.cpp" "utils.cpp")
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC ${OpenCV_LIBS})
+
+

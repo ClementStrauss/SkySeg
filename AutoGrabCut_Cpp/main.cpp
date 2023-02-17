@@ -13,7 +13,7 @@
 using namespace std;
 using namespace cv;
 
-//#define _DEBUG
+// #define _DEBUG
 
 struct AutoGrabCut
 {
@@ -35,12 +35,9 @@ struct AutoGrabCut
   Mat detected_edges;
   Mat src_gray;
 
-  Mat element7 = getStructuringElement(MORPH_RECT, Size(7,7));
-  Mat element5 = getStructuringElement(MORPH_RECT, Size(5,5));
-  Mat element3 = getStructuringElement(MORPH_RECT, Size(3,3));
-
-
-
+  Mat element7 = getStructuringElement(MORPH_RECT, Size(7, 7));
+  Mat element5 = getStructuringElement(MORPH_RECT, Size(5, 5));
+  Mat element3 = getStructuringElement(MORPH_RECT, Size(3, 3));
 
   static void cb_sky(int value, void *ptr)
   {
@@ -116,7 +113,7 @@ public:
     // morphologyEx(sobel, sobel, MORPH_OPEN, element);
 
     threshold(edges, edges, 64, 255, THRESH_BINARY);
-   
+
     return edges;
   }
 
@@ -334,15 +331,24 @@ int main(int argc, char *argv[])
       break;
 
     mask = skyGrabCut.runAutoSkySegmentation(image);
-    imshow("sky mask", mask);
-    //imshow("Overlay", getImageWithMaskOverlay(image, mask, {140, 72, 15}));
-    Mat result =  getImageWithMaskOverlay(image, mask);
-    hconcat(image,result, result);
-    resize(result,result,Size(result.cols/2,result.rows/2));
-        
-    imshow("Result", result);
-    imshow("input",image);
 
+    // imshow("Overlay", getImageWithMaskOverlay(image, mask, {140, 72, 15}));
+    Mat result = getImageWithMaskOverlay(image, mask);
+    hconcat(image, result, result);
+    resize(result, result, Size(result.cols / 2, result.rows / 2));
+
+    resize(mask, mask, Size(mask.cols / 2, mask.rows / 2));
+    if (result.cols > 1920)
+    {
+      resize(result, result, Size(result.cols / 2, result.rows / 2));
+      resize(mask, mask, Size(mask.cols / 2, mask.rows / 2));
+    }
+     
+
+    imshow("sky mask", mask*255);
+
+    imshow("Result", result);
+    // imshow("input",image);
 
     key = waitKey(1);
   }
