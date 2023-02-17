@@ -4,20 +4,12 @@
 conda env create -f environment.yml
 ```
 
-# Repo structure :
+# Repository Structure :
 ## OO_Dataset
-Download and convert coco panoptic to binary masks for the sky label. 
-The validation set from is used as it is smaller in size.
+- Script to Download and convert coco panoptic to binary masks for the sky label. Only The Coco validation set is used as it is smaller in size.
+- Notebook to load and display image from ADE20K
 
-Images without sky are left out for now, can be added later 
 
-simply run :
-
-```
-cd OO_Dataset
-chmod +x DownloadCoco.sh && ./DownloadCoco.sh
-python createBinaryMaskImagesFromCoco.py
-```
   
 ## AutoGrabCut_Cpp
 - Computer vision based sky segmentation, run near real time on 720p video  
