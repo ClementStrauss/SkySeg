@@ -14,4 +14,8 @@ make
 ```
 ./ski YourVideoFile
 ```
+or
 
+```
+./ski YourImage.{png, jpg, jpeg}
+```
