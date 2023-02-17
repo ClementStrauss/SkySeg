@@ -12,10 +12,10 @@ make
 
 ### Run
 ```
-./ski YourVideoFile
+./sky YourVideoFile
 ```
 or
 
 ```
-./ski YourImage.{png, jpg, jpeg}
+./sky YourImage.{png, jpg, jpeg}
 ```
