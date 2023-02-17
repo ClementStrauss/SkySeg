@@ -12,4 +12,4 @@ NOTE : **createBinaryMaskImagesFromCoco.py** does not rely on coco API and direc
 
 # ADE20K
 
-a demo Notebook to load and display image, and sky binary mask. 
+a demo Notebook to load dataset, display image, and sky binary mask. 
