@@ -18,11 +18,11 @@ using namespace cv;
 struct AutoGrabCut
 {
 
-  int skyPercentageInImageForGrabCutInit = 50;
+  int skyPercentageInImageForGrabCutInit = 33;
   int genericInt = 5;
-  int genericInt2 = 5;
+  int genericInt2 = 32;
 
-  int scaling = 8;
+  int scaling = 4;
 
   Mat bgrSmall;
   Mat bgrSmaller;
@@ -183,15 +183,18 @@ public:
     Mat edges = detectEdges(src_gray);
     imshowDebug("edges", edges);
 
-    int pyramideScale1 = scaling;
-    int pyramideScale2 = scaling/2;
 
-    resize(imageInputBGR, bgrSmall, {imageInputBGR.cols / pyramideScale1, imageInputBGR.rows / pyramideScale1}, 0, 0, INTER_LINEAR);
+    int pyramideScale1 = scaling;
+    int pyramideScale2 = scaling / 2;
+
+    resize(imageInputBGR, bgrSmall, {imageInputBGR.cols / pyramideScale1, imageInputBGR.rows / pyramideScale1}, 0, 0, INTER_LANCZOS4);
     // blur(bgrSmall, bgrSmall, {3, 3});
-    medianBlur(bgrSmall, bgrSmall, 3);
+    //medianBlur(bgrSmall, bgrSmall, 3);
     imshowDebug("bgrSmall", bgrSmall);
 
-    resize(bgrSmall, bgrSmaller, {bgrSmall.cols / pyramideScale2, bgrSmall.rows / pyramideScale2}, 0, 0, INTER_LINEAR);
+    resize(bgrSmall, bgrSmaller, {bgrSmall.cols / pyramideScale2, bgrSmall.rows / pyramideScale2}, 0, 0, INTER_LANCZOS4);
+
+    imshowDebug("bgrSmall", bgrSmaller);
     // medianBlur(bgrSmaller, bgrSmaller, 3);
     // blur(bgrSmaller, bgrSmaller, {3, 3});
 
@@ -276,6 +279,7 @@ bool endsWith(const string &s, const string &suffix)
 int main(int argc, char *argv[])
 {
   string filename = "/home/cstrauss/PERSO/StreamFlow/lofoten.mp4";
+  string outputFilename = "";
   if (argc > 1)
   {
     // The first argument (argv[0]) is the name of the program
@@ -286,6 +290,13 @@ int main(int argc, char *argv[])
   else
   {
     std::cout << "No argument provided." << std::endl;
+  }
+
+  bool interactive = true;
+  if (argc == 3)
+  {
+    outputFilename = argv[2];
+    interactive = false;
   }
 
   bool isImage = endsWith(filename, "png") || endsWith(filename, "jpg") || endsWith(filename, "jpeg");
@@ -343,14 +354,22 @@ int main(int argc, char *argv[])
       resize(result, result, Size(result.cols / 2, result.rows / 2));
       resize(mask, mask, Size(mask.cols / 2, mask.rows / 2));
     }
-     
 
-    imshow("sky mask", mask*255);
+    mask = mask * 255;
+    if (interactive)
+    {
+      imshow("sky mask", mask);
+      imshow("Result", result);
+      // imshow("input",image);
 
-    imshow("Result", result);
-    // imshow("input",image);
-
-    key = waitKey(1);
+      key = waitKey(1);
+    }
+    else
+    {
+      imwrite(outputFilename + ".CppMask.png", mask);
+      imwrite(outputFilename + ".CppComposite.jpg", result);
+      break;
+    }
   }
 
   return 0;
