@@ -240,8 +240,12 @@ public:
       grabCut(bgrSmall, mask, rect, bgdModel, fgdModel, 1, GC_EVAL);
     }
 
+    imshowDebug("mask final", mask * 64);
+
+    imshowDebug("pass2", getImageWithMaskOverlay(imageInputBGR, mask));
+
     mask = mask & 0x01;
-    resize(mask, mask, {imageInputBGR.cols, imageInputBGR.rows}, 0, 0, INTER_LINEAR);
+    resize(mask, mask, {imageInputBGR.cols, imageInputBGR.rows}, 0, 0, INTER_NEAREST);
 
     mask = mask - edges;
     mask = mask & 0x01;
