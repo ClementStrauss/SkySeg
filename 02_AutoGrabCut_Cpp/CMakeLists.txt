@@ -21,8 +21,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 file (GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 file (GLOB_RECURSE HEADERS CONFIGURE_DEPENDS "src/*.h")
 
-add_executable(${PROJECT_NAME} "main.cpp" "utils.cpp")
-
+add_executable(${PROJECT_NAME} "main.cpp" "utils.cpp" "BackProjection.cpp" "AutoGrabCut.cpp")
+ 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC ${OpenCV_LIBS})

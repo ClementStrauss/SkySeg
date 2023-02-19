@@ -4,3 +4,5 @@
 01_DeepLearning/models/modelStep1_resnet18_ADE20k.fastai.pth filter=lfs diff=lfs merge=lfs -text
 TestVideo/Roadtrip[[:space:]]USA[[:space:]]-[[:space:]]Sedona[[:space:]]Valley,[[:space:]]Arizona[[:space:]]-[[:space:]]Dash[[:space:]]Cam.mp4 filter=lfs diff=lfs merge=lfs -text
 02_AutoGrabCut_Cpp/TestVideoCppResult/Roadtrip[[:space:]]USA[[:space:]]-[[:space:]]Sedona[[:space:]]Valley,[[:space:]]Arizona[[:space:]]-[[:space:]]Dash[[:space:]]Cam_CPPResult.mp4 filter=lfs diff=lfs merge=lfs -text
+02_AutoGrabCut_Cpp/TestVideoCppResult/RoadtripUSA-SedonaValleyArizona-DashCam_CPPResult.mp4 filter=lfs diff=lfs merge=lfs -text
+02_AutoGrabCut_Cpp/TestVideoCppResult/video.mp4 filter=lfs diff=lfs merge=lfs -text
