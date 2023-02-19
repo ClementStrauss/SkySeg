@@ -27,4 +27,4 @@ conda env create -f environment.yml
 - Results on the video is located in **02_AutoGrabCut_Cpp**
 
 ## report.ipynb
-- this is the notebook use to generate the report web page, using quarto
+- this is the notebook used to generate the report's web page, using quarto tool : https://quarto.org/
