@@ -143,7 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="report" class="level1">
 <h1>Report</h1>
 <hr>
-<p>This Repport is better viewed as a notebook</p>
+<p>This Repport is a notebook</p>
 <section id="time-spent-on-code-and-report" class="level2">
 <h2 class="anchored" data-anchor-id="time-spent-on-code-and-report">Time spent on code and report</h2>
 <p>About 35h</p>
@@ -162,45 +162,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Some test images (and video) have been collected and are located in <strong>TestImages</strong></p></li>
 <li><p>Both computer vision and DeepLearning approaches contain result images on this nano dataset</p></li>
 </ul>
-<p>Computer vision result :<br>
-<img src="./02_AutoGrabCut_Cpp/TestImagesCppResults/patrick-tomasso-SVVTZtTGyaU-unsplash.jpg.CppComposite.jpg" width="50%" height="50%"></p>
-<p>Deep Learning result :<br>
-<img src="01_DeepLearning/TestImagesUnetResults/ResNet18/patrick-tomasso-SVVTZtTGyaU-unsplash.jpg.UnetComposite.jpg" width="50%" height="50%"></p>
+Computer vision result :<br>
+
+<p align="center">
+<img src="./02_AutoGrabCut_Cpp/TestImagesCppResults/patrick-tomasso-SVVTZtTGyaU-unsplash.jpg.CppComposite.jpg" width="50%" height="50%">
+</p>
+Deep Learning result :<br>
+
+<p align="center">
+<img src="01_DeepLearning/TestImagesUnetResults/ResNet18/patrick-tomasso-SVVTZtTGyaU-unsplash.jpg.UnetComposite.jpg" width="50%" height="50%">
+</p>
 <ul>
 <li>Computer vision folder contains a result video :</li>
 </ul>
-<video width="640" height="480" controls="">
-<source src="./02_AutoGrabCut_Cpp/TestVideoCppResult/video.mp4" type="video/mp4">
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>HTML</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>video width<span class="op">=</span><span class="st">"100%"</span> height<span class="op">=</span><span class="st">"480"</span> controls<span class="op">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>source src<span class="op">=</span><span class="st">"./02_AutoGrabCut_Cpp/TestVideoCppResult/video.mp4"</span> <span class="bu">type</span><span class="op">=</span><span class="st">"video/mp4"</span><span class="op">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>video<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<video width="100%" height="480" controls="">
+  <source src="./02_AutoGrabCut_Cpp/TestVideoCppResult/video.mp4" type="video/mp4">
 </video>
-
-<section id="traditional-computer-vision-approach" class="level2">
-<h1 class="anchored" data-anchor-id="traditional-computer-vision-approach">Traditional Computer Vision Approach</h1>
-<hr>
-<ul>
-<p><img src="reportAssets/Screenshot from 2023-02-19 17-57-51.png" width="50%" height="50%"></p>
+</div>
+</div>
 </section>
-
+<section id="traditional-computer-vision-approach" class="level1">
+<h1>Traditional Computer Vision Approach</h1>
+<hr>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>HTML</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>img src<span class="op">=</span><span class="st">"reportAssets/Screenshot from 2023-02-19 17-57-51.png"</span>  width<span class="op">=</span><span class="st">"100%"</span> height<span class="op">=</span><span class="st">"80%"</span><span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<img src="reportAssets/Screenshot from 2023-02-19 17-57-51.png" width="100%" height="80%">
+</div>
+</div>
 <section id="result-folder" class="level2">
 <h2 class="anchored" data-anchor-id="result-folder">Result folder :</h2>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!pip install ipyplot</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipyplot</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> glob <span class="im">import</span> glob</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>listofImageNames <span class="op">=</span> glob(<span class="st">'02_AutoGrabCut_Cpp/TestImagesCppResults/*.jpg'</span>, recursive<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ipyplot.plot_images(listofImageNames, img_width<span class="op">=</span><span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!pip install ipyplot</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipyplot</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> glob <span class="im">import</span> glob</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>listofImageNames <span class="op">=</span> glob(<span class="st">'02_AutoGrabCut_Cpp/TestImagesCppResults/*.jpg'</span>, recursive<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>ipyplot.plot_images(listofImageNames, img_width<span class="op">=</span><span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 
     <style>
-        #ipyplot-html-viewer-toggle-jDSffzD7q659mLQDAg8PD8 {
+        #ipyplot-html-viewer-toggle-M64fy7HHtcUAhzEnioCMy6 {
             position: absolute;
             top: -9999px;
             left: -9999px;
             visibility: hidden;
         }
 
-        #ipyplot-html-viewer-label-jDSffzD7q659mLQDAg8PD8 { 
+        #ipyplot-html-viewer-label-M64fy7HHtcUAhzEnioCMy6 { 
             position: relative;
             display: inline-block;
             cursor: pointer;
@@ -208,19 +225,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             text-decoration: underline;
         }
 
-        #ipyplot-html-viewer-textarea-jDSffzD7q659mLQDAg8PD8 {
+        #ipyplot-html-viewer-textarea-M64fy7HHtcUAhzEnioCMy6 {
             background: lightgrey;
             width: 100%;
             height: 0px;
             display: none;
         }
 
-        #ipyplot-html-viewer-toggle-jDSffzD7q659mLQDAg8PD8:checked ~ #ipyplot-html-viewer-textarea-jDSffzD7q659mLQDAg8PD8 {
+        #ipyplot-html-viewer-toggle-M64fy7HHtcUAhzEnioCMy6:checked ~ #ipyplot-html-viewer-textarea-M64fy7HHtcUAhzEnioCMy6 {
             height: 200px;
             display: block;
         }
 
-        #ipyplot-html-viewer-toggle-jDSffzD7q659mLQDAg8PD8:checked + #ipyplot-html-viewer-label-jDSffzD7q659mLQDAg8PD8:after {
+        #ipyplot-html-viewer-toggle-M64fy7HHtcUAhzEnioCMy6:checked + #ipyplot-html-viewer-label-M64fy7HHtcUAhzEnioCMy6:after {
             content: "hide html";
             position: absolute;
             top: 0;
@@ -234,11 +251,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         }
     </style>
     <div>
-        <input type="checkbox" id="ipyplot-html-viewer-toggle-jDSffzD7q659mLQDAg8PD8">
-        <label id="ipyplot-html-viewer-label-jDSffzD7q659mLQDAg8PD8" for="ipyplot-html-viewer-toggle-jDSffzD7q659mLQDAg8PD8">show html</label>
-        <textarea id="ipyplot-html-viewer-textarea-jDSffzD7q659mLQDAg8PD8" readonly="">            
+        <input type="checkbox" id="ipyplot-html-viewer-toggle-M64fy7HHtcUAhzEnioCMy6">
+        <label id="ipyplot-html-viewer-label-M64fy7HHtcUAhzEnioCMy6" for="ipyplot-html-viewer-toggle-M64fy7HHtcUAhzEnioCMy6">show html</label>
+        <textarea id="ipyplot-html-viewer-textarea-M64fy7HHtcUAhzEnioCMy6" readonly="">            
         &lt;style&gt;
-        #ipyplot-imgs-container-div-UtgTjm4tt3KBW4k37qcXvs {
+        #ipyplot-imgs-container-div-8DYRszG6BipQCCJUoFn9Bm {
             width: 100%;
             height: 100%;
             margin: 0%;
@@ -247,14 +264,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             overflow-y: scroll;
         }
 
-        div.ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs {
+        div.ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm {
             width: 200px;
             display: inline-block;
             margin: 3px;
             position: relative;
         }
 
-        div.ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs {
+        div.ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm {
             width: 200px;
             background: white;
             display: inline-block;
@@ -266,11 +283,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             left: 0;
         }
 
-        div.ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs span.ipyplot-img-close {
+        div.ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm span.ipyplot-img-close {
             display: none;
         }
 
-        div.ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs span {
+        div.ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm span {
             width: 100%;
             height: 100%;
             position: absolute;
@@ -278,18 +295,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             left: 0;
         }
 
-        div.ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs img {
+        div.ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm img {
             width: 200px;
         }
 
-        div.ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs span.ipyplot-img-close:hover {
+        div.ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm span.ipyplot-img-close:hover {
             cursor: zoom-out;
         }
-        div.ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs span.ipyplot-img-expand:hover {
+        div.ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm span.ipyplot-img-expand:hover {
             cursor: zoom-in;
         }
 
-        div[id^=ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs]:target {
+        div[id^=ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm]:target {
             transform: scale(2.5);
             transform-origin: left top;
             z-index: 5000;
@@ -298,179 +315,179 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             position: absolute;
         }
 
-        div[id^=ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs]:target span.ipyplot-img-close {
+        div[id^=ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm]:target span.ipyplot-img-close {
             display: block;
         }
 
-        div[id^=ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs]:target span.ipyplot-img-expand {
+        div[id^=ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm]:target span.ipyplot-img-expand {
             display: none;
         }
         &lt;/style&gt;
-    &lt;div id="ipyplot-imgs-container-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-4m8nphEgerVvKgDk7fCVqE" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div id="ipyplot-imgs-container-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-QH5M5NxTmFPSDyKrVrW9hC" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;0&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/exemple1.png.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/exemple1.png.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-4m8nphEgerVvKgDk7fCVqE"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-QH5M5NxTmFPSDyKrVrW9hC"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-5MqBRVLMUsCtfveqvFY3Yu" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-m5cKUYYSNKdgUYd85tenty" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;1&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/On-the-Road.png.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/On-the-Road.png.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-5MqBRVLMUsCtfveqvFY3Yu"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-m5cKUYYSNKdgUYd85tenty"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-iBDDJfxy92dbNztfmsvsyW" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-3AMA7szjkDPTfsXztaNskN" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;2&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/patrick-tomasso-SVVTZtTGyaU-unsplash.jpg.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/patrick-tomasso-SVVTZtTGyaU-unsplash.jpg.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-iBDDJfxy92dbNztfmsvsyW"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-3AMA7szjkDPTfsXztaNskN"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-MUxfZKvAZWsqXoFgP84Ybv" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-XLjQFq7hG2nEbbnxu3GGHB" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;3&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/2._MAD_12003_Chaoyang_Park_Plaza_i_02_overview_with_city_context.jpg.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/2._MAD_12003_Chaoyang_Park_Plaza_i_02_overview_with_city_context.jpg.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-MUxfZKvAZWsqXoFgP84Ybv"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-XLjQFq7hG2nEbbnxu3GGHB"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-S7cfgxZcZ5huhRPvBJpH9i" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-nu9RFbTGWDiCiaGyWwthK2" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;4&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/750x422.jpeg.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/750x422.jpeg.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-S7cfgxZcZ5huhRPvBJpH9i"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-nu9RFbTGWDiCiaGyWwthK2"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-efV3cm63TZL2y6zgp2fc4B" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-h6fHKWrAdmrFYG5HuQgkKg" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;5&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/635x487_100_300_000000x10x0.png.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/635x487_100_300_000000x10x0.png.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-efV3cm63TZL2y6zgp2fc4B"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-h6fHKWrAdmrFYG5HuQgkKg"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-drm4Fs4G8xX7zPhCdKSzmD" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-48bZAGBmhyx2Bd6XdzYuMu" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;6&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/ryan-schroeder-Gg7uKdHFb_c-unsplash.jpg.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/ryan-schroeder-Gg7uKdHFb_c-unsplash.jpg.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-drm4Fs4G8xX7zPhCdKSzmD"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-48bZAGBmhyx2Bd6XdzYuMu"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-L4JDeS9dKXHFpkF2HFs5oA" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-FRaxnmq7v5EPUeWeJF2h87" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;7&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/ml_elcamino_ontheroad_02_0.jpg.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/ml_elcamino_ontheroad_02_0.jpg.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-L4JDeS9dKXHFpkF2HFs5oA"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-FRaxnmq7v5EPUeWeJF2h87"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-bru8fzB5VZetgWgFbhUKa5" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-9MPiBYzUsF357Tn6FJKaWf" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;8&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/photo-1625726411847-8cbb60cc71e6.jpeg.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/photo-1625726411847-8cbb60cc71e6.jpeg.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-bru8fzB5VZetgWgFbhUKa5"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-9MPiBYzUsF357Tn6FJKaWf"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-8oPiZX24YGUP93UXKrs5pU" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-fBy3Cx9tSQRdDTikJDj5YZ" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;9&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/route-deserte-montagnes-arriere-plan-dans-paysage-aride-iles-canaries-fuerteventura_462054-226.jpg.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/route-deserte-montagnes-arriere-plan-dans-paysage-aride-iles-canaries-fuerteventura_462054-226.jpg.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-8oPiZX24YGUP93UXKrs5pU"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-fBy3Cx9tSQRdDTikJDj5YZ"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-guPDWUAuEDfSroHG2UK2y4" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-GG2YvxrNbshFAtmQhWrx4n" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;10&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/photo1.jpeg.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/photo1.jpeg.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-guPDWUAuEDfSroHG2UK2y4"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-GG2YvxrNbshFAtmQhWrx4n"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-BViyhMgsWdoNTPafPxzKZK" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-7K4StD8oheREBD89WPJbSd" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;11&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/shanghai-morning-city-landscape-empty-asphalt-road-shanghai-morning-city-landscape-asphalt-road-155904083.jpg.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/shanghai-morning-city-landscape-empty-asphalt-road-shanghai-morning-city-landscape-asphalt-road-155904083.jpg.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-BViyhMgsWdoNTPafPxzKZK"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-7K4StD8oheREBD89WPJbSd"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
-        &lt;div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-8LhhpSSe6aiTx7VeJ5NjHA" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs"&gt;
+    &lt;div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
+        &lt;div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-GcEKNaecobfA9t2MpXEsD3" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;12&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;02_AutoGrabCut_Cpp/TestImagesCppResults/12.jpg.CppComposite.jpg&lt;/h4&gt;&lt;img src="02_AutoGrabCut_Cpp/TestImagesCppResults/12.jpg.CppComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-8LhhpSSe6aiTx7VeJ5NjHA"&gt;
+            &lt;a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-GcEKNaecobfA9t2MpXEsD3"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
@@ -483,7 +500,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display">
 
         <style>
-        #ipyplot-imgs-container-div-UtgTjm4tt3KBW4k37qcXvs {
+        #ipyplot-imgs-container-div-8DYRszG6BipQCCJUoFn9Bm {
             width: 100%;
             height: 100%;
             margin: 0%;
@@ -492,14 +509,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             overflow-y: scroll;
         }
 
-        div.ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs {
+        div.ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm {
             width: 200px;
             display: inline-block;
             margin: 3px;
             position: relative;
         }
 
-        div.ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs {
+        div.ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm {
             width: 200px;
             background: white;
             display: inline-block;
@@ -511,11 +528,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             left: 0;
         }
 
-        div.ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs span.ipyplot-img-close {
+        div.ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm span.ipyplot-img-close {
             display: none;
         }
 
-        div.ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs span {
+        div.ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm span {
             width: 100%;
             height: 100%;
             position: absolute;
@@ -523,18 +540,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             left: 0;
         }
 
-        div.ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs img {
+        div.ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm img {
             width: 200px;
         }
 
-        div.ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs span.ipyplot-img-close:hover {
+        div.ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm span.ipyplot-img-close:hover {
             cursor: zoom-out;
         }
-        div.ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs span.ipyplot-img-expand:hover {
+        div.ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm span.ipyplot-img-expand:hover {
             cursor: zoom-in;
         }
 
-        div[id^=ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs]:target {
+        div[id^=ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm]:target {
             transform: scale(2.5);
             transform-origin: left top;
             z-index: 5000;
@@ -543,179 +560,179 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             position: absolute;
         }
 
-        div[id^=ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs]:target span.ipyplot-img-close {
+        div[id^=ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm]:target span.ipyplot-img-close {
             display: block;
         }
 
-        div[id^=ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs]:target span.ipyplot-img-expand {
+        div[id^=ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm]:target span.ipyplot-img-expand {
             display: none;
         }
         </style>
-    <div id="ipyplot-imgs-container-div-UtgTjm4tt3KBW4k37qcXvs">
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-4m8nphEgerVvKgDk7fCVqE" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div id="ipyplot-imgs-container-div-8DYRszG6BipQCCJUoFn9Bm">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-QH5M5NxTmFPSDyKrVrW9hC" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">0</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/exemple1.png.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/exemple1.png.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-4m8nphEgerVvKgDk7fCVqE">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-QH5M5NxTmFPSDyKrVrW9hC">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-5MqBRVLMUsCtfveqvFY3Yu" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-m5cKUYYSNKdgUYd85tenty" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">1</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/On-the-Road.png.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/On-the-Road.png.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-5MqBRVLMUsCtfveqvFY3Yu">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-m5cKUYYSNKdgUYd85tenty">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-iBDDJfxy92dbNztfmsvsyW" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-3AMA7szjkDPTfsXztaNskN" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">2</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/patrick-tomasso-SVVTZtTGyaU-unsplash.jpg.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/patrick-tomasso-SVVTZtTGyaU-unsplash.jpg.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-iBDDJfxy92dbNztfmsvsyW">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-3AMA7szjkDPTfsXztaNskN">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-MUxfZKvAZWsqXoFgP84Ybv" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-XLjQFq7hG2nEbbnxu3GGHB" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">3</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/2._MAD_12003_Chaoyang_Park_Plaza_i_02_overview_with_city_context.jpg.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/2._MAD_12003_Chaoyang_Park_Plaza_i_02_overview_with_city_context.jpg.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-MUxfZKvAZWsqXoFgP84Ybv">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-XLjQFq7hG2nEbbnxu3GGHB">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-S7cfgxZcZ5huhRPvBJpH9i" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-nu9RFbTGWDiCiaGyWwthK2" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">4</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/750x422.jpeg.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/750x422.jpeg.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-S7cfgxZcZ5huhRPvBJpH9i">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-nu9RFbTGWDiCiaGyWwthK2">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-efV3cm63TZL2y6zgp2fc4B" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-h6fHKWrAdmrFYG5HuQgkKg" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">5</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/635x487_100_300_000000x10x0.png.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/635x487_100_300_000000x10x0.png.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-efV3cm63TZL2y6zgp2fc4B">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-h6fHKWrAdmrFYG5HuQgkKg">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-drm4Fs4G8xX7zPhCdKSzmD" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-48bZAGBmhyx2Bd6XdzYuMu" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">6</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/ryan-schroeder-Gg7uKdHFb_c-unsplash.jpg.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/ryan-schroeder-Gg7uKdHFb_c-unsplash.jpg.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-drm4Fs4G8xX7zPhCdKSzmD">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-48bZAGBmhyx2Bd6XdzYuMu">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-L4JDeS9dKXHFpkF2HFs5oA" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-FRaxnmq7v5EPUeWeJF2h87" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">7</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/ml_elcamino_ontheroad_02_0.jpg.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/ml_elcamino_ontheroad_02_0.jpg.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-L4JDeS9dKXHFpkF2HFs5oA">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-FRaxnmq7v5EPUeWeJF2h87">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-bru8fzB5VZetgWgFbhUKa5" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-9MPiBYzUsF357Tn6FJKaWf" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">8</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/photo-1625726411847-8cbb60cc71e6.jpeg.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/photo-1625726411847-8cbb60cc71e6.jpeg.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-bru8fzB5VZetgWgFbhUKa5">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-9MPiBYzUsF357Tn6FJKaWf">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-8oPiZX24YGUP93UXKrs5pU" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-fBy3Cx9tSQRdDTikJDj5YZ" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">9</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/route-deserte-montagnes-arriere-plan-dans-paysage-aride-iles-canaries-fuerteventura_462054-226.jpg.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/route-deserte-montagnes-arriere-plan-dans-paysage-aride-iles-canaries-fuerteventura_462054-226.jpg.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-8oPiZX24YGUP93UXKrs5pU">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-fBy3Cx9tSQRdDTikJDj5YZ">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-guPDWUAuEDfSroHG2UK2y4" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-GG2YvxrNbshFAtmQhWrx4n" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">10</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/photo1.jpeg.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/photo1.jpeg.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-guPDWUAuEDfSroHG2UK2y4">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-GG2YvxrNbshFAtmQhWrx4n">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-BViyhMgsWdoNTPafPxzKZK" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-7K4StD8oheREBD89WPJbSd" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">11</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/shanghai-morning-city-landscape-empty-asphalt-road-shanghai-morning-city-landscape-asphalt-road-155904083.jpg.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/shanghai-morning-city-landscape-empty-asphalt-road-shanghai-morning-city-landscape-asphalt-road-155904083.jpg.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-BViyhMgsWdoNTPafPxzKZK">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-7K4StD8oheREBD89WPJbSd">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-UtgTjm4tt3KBW4k37qcXvs">
-        <div id="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-8LhhpSSe6aiTx7VeJ5NjHA" class="ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs">
+    <div class="ipyplot-placeholder-div-8DYRszG6BipQCCJUoFn9Bm">
+        <div id="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-GcEKNaecobfA9t2MpXEsD3" class="ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">12</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">02_AutoGrabCut_Cpp/TestImagesCppResults/12.jpg.CppComposite.jpg</h4><img src="02_AutoGrabCut_Cpp/TestImagesCppResults/12.jpg.CppComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-UtgTjm4tt3KBW4k37qcXvs-8LhhpSSe6aiTx7VeJ5NjHA">
+            <a href="#ipyplot-content-div-8DYRszG6BipQCCJUoFn9Bm-GcEKNaecobfA9t2MpXEsD3">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
@@ -800,28 +817,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section>
 </section>
-</section>
-<section id="deep-learning-approach" class="level1">
-<h1>Deep Learning Approach</h1>
-<hr>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipyplot</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> glob <span class="im">import</span> glob</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>listofImageNames <span class="op">=</span> glob(<span class="st">'01_DeepLearning/TestImagesUnetResults/ResNet18/*.jpg'</span>, recursive<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ipyplot.plot_images(listofImageNames, img_width<span class="op">=</span><span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="deep-learning-approach" class="level2">
+<h2 class="anchored" data-anchor-id="deep-learning-approach"># Deep Learning Approach</h2>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipyplot</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> glob <span class="im">import</span> glob</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>listofImageNames <span class="op">=</span> glob(<span class="st">'01_DeepLearning/TestImagesUnetResults/ResNet18/*.jpg'</span>, recursive<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ipyplot.plot_images(listofImageNames, img_width<span class="op">=</span><span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 
     <style>
-        #ipyplot-html-viewer-toggle-RQ4Y3J2Rr6gQHD3ge3UxSu {
+        #ipyplot-html-viewer-toggle-5ZfppYMey9JG3dgBEVECWV {
             position: absolute;
             top: -9999px;
             left: -9999px;
             visibility: hidden;
         }
 
-        #ipyplot-html-viewer-label-RQ4Y3J2Rr6gQHD3ge3UxSu { 
+        #ipyplot-html-viewer-label-5ZfppYMey9JG3dgBEVECWV { 
             position: relative;
             display: inline-block;
             cursor: pointer;
@@ -829,19 +844,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             text-decoration: underline;
         }
 
-        #ipyplot-html-viewer-textarea-RQ4Y3J2Rr6gQHD3ge3UxSu {
+        #ipyplot-html-viewer-textarea-5ZfppYMey9JG3dgBEVECWV {
             background: lightgrey;
             width: 100%;
             height: 0px;
             display: none;
         }
 
-        #ipyplot-html-viewer-toggle-RQ4Y3J2Rr6gQHD3ge3UxSu:checked ~ #ipyplot-html-viewer-textarea-RQ4Y3J2Rr6gQHD3ge3UxSu {
+        #ipyplot-html-viewer-toggle-5ZfppYMey9JG3dgBEVECWV:checked ~ #ipyplot-html-viewer-textarea-5ZfppYMey9JG3dgBEVECWV {
             height: 200px;
             display: block;
         }
 
-        #ipyplot-html-viewer-toggle-RQ4Y3J2Rr6gQHD3ge3UxSu:checked + #ipyplot-html-viewer-label-RQ4Y3J2Rr6gQHD3ge3UxSu:after {
+        #ipyplot-html-viewer-toggle-5ZfppYMey9JG3dgBEVECWV:checked + #ipyplot-html-viewer-label-5ZfppYMey9JG3dgBEVECWV:after {
             content: "hide html";
             position: absolute;
             top: 0;
@@ -855,11 +870,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         }
     </style>
     <div>
-        <input type="checkbox" id="ipyplot-html-viewer-toggle-RQ4Y3J2Rr6gQHD3ge3UxSu">
-        <label id="ipyplot-html-viewer-label-RQ4Y3J2Rr6gQHD3ge3UxSu" for="ipyplot-html-viewer-toggle-RQ4Y3J2Rr6gQHD3ge3UxSu">show html</label>
-        <textarea id="ipyplot-html-viewer-textarea-RQ4Y3J2Rr6gQHD3ge3UxSu" readonly="">            
+        <input type="checkbox" id="ipyplot-html-viewer-toggle-5ZfppYMey9JG3dgBEVECWV">
+        <label id="ipyplot-html-viewer-label-5ZfppYMey9JG3dgBEVECWV" for="ipyplot-html-viewer-toggle-5ZfppYMey9JG3dgBEVECWV">show html</label>
+        <textarea id="ipyplot-html-viewer-textarea-5ZfppYMey9JG3dgBEVECWV" readonly="">            
         &lt;style&gt;
-        #ipyplot-imgs-container-div-WDdsxbi7RrhtHWRmFyNASf {
+        #ipyplot-imgs-container-div-fFHTEptvku6FhtBYgqNEoo {
             width: 100%;
             height: 100%;
             margin: 0%;
@@ -868,14 +883,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             overflow-y: scroll;
         }
 
-        div.ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf {
+        div.ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo {
             width: 200px;
             display: inline-block;
             margin: 3px;
             position: relative;
         }
 
-        div.ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf {
+        div.ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo {
             width: 200px;
             background: white;
             display: inline-block;
@@ -887,11 +902,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             left: 0;
         }
 
-        div.ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf span.ipyplot-img-close {
+        div.ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo span.ipyplot-img-close {
             display: none;
         }
 
-        div.ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf span {
+        div.ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo span {
             width: 100%;
             height: 100%;
             position: absolute;
@@ -899,18 +914,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             left: 0;
         }
 
-        div.ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf img {
+        div.ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo img {
             width: 200px;
         }
 
-        div.ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf span.ipyplot-img-close:hover {
+        div.ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo span.ipyplot-img-close:hover {
             cursor: zoom-out;
         }
-        div.ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf span.ipyplot-img-expand:hover {
+        div.ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo span.ipyplot-img-expand:hover {
             cursor: zoom-in;
         }
 
-        div[id^=ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf]:target {
+        div[id^=ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo]:target {
             transform: scale(2.5);
             transform-origin: left top;
             z-index: 5000;
@@ -919,179 +934,179 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             position: absolute;
         }
 
-        div[id^=ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf]:target span.ipyplot-img-close {
+        div[id^=ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo]:target span.ipyplot-img-close {
             display: block;
         }
 
-        div[id^=ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf]:target span.ipyplot-img-expand {
+        div[id^=ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo]:target span.ipyplot-img-expand {
             display: none;
         }
         &lt;/style&gt;
-    &lt;div id="ipyplot-imgs-container-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-7vmzLBK4zhdgp4jCWt3kh3" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div id="ipyplot-imgs-container-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-NqJtEZ9o757A9XNL6wcD4e" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;0&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/photo-1625726411847-8cbb60cc71e6.jpeg.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/photo-1625726411847-8cbb60cc71e6.jpeg.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-7vmzLBK4zhdgp4jCWt3kh3"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-NqJtEZ9o757A9XNL6wcD4e"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-47gqmeeK9yzzmj9UmGJuU9" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-9XR27uYDtYGanL6fd7evQo" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;1&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/750x422.jpeg.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/750x422.jpeg.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-47gqmeeK9yzzmj9UmGJuU9"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-9XR27uYDtYGanL6fd7evQo"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-bs4TMBeXd6BZC2hA9bz3bv" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-ekFqxUvsnzTwJGQeZCNars" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;2&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/shanghai-morning-city-landscape-empty-asphalt-road-shanghai-morning-city-landscape-asphalt-road-155904083.jpg.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/shanghai-morning-city-landscape-empty-asphalt-road-shanghai-morning-city-landscape-asphalt-road-155904083.jpg.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-bs4TMBeXd6BZC2hA9bz3bv"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-ekFqxUvsnzTwJGQeZCNars"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-FRVn3rV6c8YoUYnuGyTRgp" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-gQyEfRbBkdtkzHiqKtUgya" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;3&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/12.jpg.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/12.jpg.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-FRVn3rV6c8YoUYnuGyTRgp"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-gQyEfRbBkdtkzHiqKtUgya"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-iDrNLDQLCFnAv8CjULBrhp" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-cMrMmK5XPQCRxJQdh9LfRB" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;4&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/route-deserte-montagnes-arriere-plan-dans-paysage-aride-iles-canaries-fuerteventura_462054-226.jpg.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/route-deserte-montagnes-arriere-plan-dans-paysage-aride-iles-canaries-fuerteventura_462054-226.jpg.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-iDrNLDQLCFnAv8CjULBrhp"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-cMrMmK5XPQCRxJQdh9LfRB"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-iuhYRrWtFfCFtAya79BuzM" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-ZnGQiXAAj6Qoet6bVasPJE" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;5&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/photo1.jpeg.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/photo1.jpeg.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-iuhYRrWtFfCFtAya79BuzM"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-ZnGQiXAAj6Qoet6bVasPJE"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-DKkkuaAMPQXcouSBKoXYFb" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-PqAMbwuW9WNr6VTGjWy4Ye" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;6&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/2._MAD_12003_Chaoyang_Park_Plaza_i_02_overview_with_city_context.jpg.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/2._MAD_12003_Chaoyang_Park_Plaza_i_02_overview_with_city_context.jpg.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-DKkkuaAMPQXcouSBKoXYFb"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-PqAMbwuW9WNr6VTGjWy4Ye"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-SNCS3sCntzzjcHHXCcoNqk" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-gAsdyUs646AHxmqxGQJmLP" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;7&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/ml_elcamino_ontheroad_02_0.jpg.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/ml_elcamino_ontheroad_02_0.jpg.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-SNCS3sCntzzjcHHXCcoNqk"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-gAsdyUs646AHxmqxGQJmLP"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-ZGunkDPw43uVzTCFyvVUs2" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-jaiy6LCUuGuvBA9xSTrwds" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;8&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/On-the-Road.png.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/On-the-Road.png.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-ZGunkDPw43uVzTCFyvVUs2"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-jaiy6LCUuGuvBA9xSTrwds"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-AKUkenvT8ZL7wCEpPxVKmf" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-jPUzM9yQAzQQfXDUFCnQNG" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;9&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/635x487_100_300_000000x10x0.png.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/635x487_100_300_000000x10x0.png.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-AKUkenvT8ZL7wCEpPxVKmf"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-jPUzM9yQAzQQfXDUFCnQNG"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-Eo3FowLJoo28pucGUn9x7m" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-JXzQeCBbpdHK8WEJWniekb" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;10&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/ryan-schroeder-Gg7uKdHFb_c-unsplash.jpg.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/ryan-schroeder-Gg7uKdHFb_c-unsplash.jpg.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-Eo3FowLJoo28pucGUn9x7m"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-JXzQeCBbpdHK8WEJWniekb"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-ZvbBzckMKj9tAkh8HZCU5H" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-eMV7mazabHkVVuCybMCEyU" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;11&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/exemple1.png.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/exemple1.png.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-ZvbBzckMKj9tAkh8HZCU5H"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-eMV7mazabHkVVuCybMCEyU"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     
-    &lt;div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
-        &lt;div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-f2LQ5obnS9uL4D5QB2AENN" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf"&gt;
+    &lt;div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo"&gt;
+        &lt;div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-9kJNBMyvorriCsDjDSJ5ew" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo"&gt;
             &lt;h4 style="font-size: 12px; word-wrap: break-word;"&gt;12&lt;/h4&gt;
             &lt;h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;"&gt;01_DeepLearning/TestImagesUnetResults/ResNet18/patrick-tomasso-SVVTZtTGyaU-unsplash.jpg.UnetComposite.jpg&lt;/h4&gt;&lt;img src="01_DeepLearning/TestImagesUnetResults/ResNet18/patrick-tomasso-SVVTZtTGyaU-unsplash.jpg.UnetComposite.jpg"/&gt;
             &lt;a href="#!"&gt;
                 &lt;span class="ipyplot-img-close"/&gt;
             &lt;/a&gt;
-            &lt;a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-f2LQ5obnS9uL4D5QB2AENN"&gt;
+            &lt;a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-9kJNBMyvorriCsDjDSJ5ew"&gt;
                 &lt;span class="ipyplot-img-expand"/&gt;
             &lt;/a&gt;
         &lt;/div&gt;
@@ -1104,7 +1119,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display">
 
         <style>
-        #ipyplot-imgs-container-div-WDdsxbi7RrhtHWRmFyNASf {
+        #ipyplot-imgs-container-div-fFHTEptvku6FhtBYgqNEoo {
             width: 100%;
             height: 100%;
             margin: 0%;
@@ -1113,14 +1128,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             overflow-y: scroll;
         }
 
-        div.ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf {
+        div.ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo {
             width: 200px;
             display: inline-block;
             margin: 3px;
             position: relative;
         }
 
-        div.ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf {
+        div.ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo {
             width: 200px;
             background: white;
             display: inline-block;
@@ -1132,11 +1147,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             left: 0;
         }
 
-        div.ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf span.ipyplot-img-close {
+        div.ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo span.ipyplot-img-close {
             display: none;
         }
 
-        div.ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf span {
+        div.ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo span {
             width: 100%;
             height: 100%;
             position: absolute;
@@ -1144,18 +1159,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             left: 0;
         }
 
-        div.ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf img {
+        div.ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo img {
             width: 200px;
         }
 
-        div.ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf span.ipyplot-img-close:hover {
+        div.ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo span.ipyplot-img-close:hover {
             cursor: zoom-out;
         }
-        div.ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf span.ipyplot-img-expand:hover {
+        div.ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo span.ipyplot-img-expand:hover {
             cursor: zoom-in;
         }
 
-        div[id^=ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf]:target {
+        div[id^=ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo]:target {
             transform: scale(2.5);
             transform-origin: left top;
             z-index: 5000;
@@ -1164,179 +1179,179 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             position: absolute;
         }
 
-        div[id^=ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf]:target span.ipyplot-img-close {
+        div[id^=ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo]:target span.ipyplot-img-close {
             display: block;
         }
 
-        div[id^=ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf]:target span.ipyplot-img-expand {
+        div[id^=ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo]:target span.ipyplot-img-expand {
             display: none;
         }
         </style>
-    <div id="ipyplot-imgs-container-div-WDdsxbi7RrhtHWRmFyNASf">
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-7vmzLBK4zhdgp4jCWt3kh3" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div id="ipyplot-imgs-container-div-fFHTEptvku6FhtBYgqNEoo">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-NqJtEZ9o757A9XNL6wcD4e" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">0</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/photo-1625726411847-8cbb60cc71e6.jpeg.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/photo-1625726411847-8cbb60cc71e6.jpeg.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-7vmzLBK4zhdgp4jCWt3kh3">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-NqJtEZ9o757A9XNL6wcD4e">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-47gqmeeK9yzzmj9UmGJuU9" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-9XR27uYDtYGanL6fd7evQo" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">1</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/750x422.jpeg.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/750x422.jpeg.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-47gqmeeK9yzzmj9UmGJuU9">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-9XR27uYDtYGanL6fd7evQo">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-bs4TMBeXd6BZC2hA9bz3bv" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-ekFqxUvsnzTwJGQeZCNars" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">2</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/shanghai-morning-city-landscape-empty-asphalt-road-shanghai-morning-city-landscape-asphalt-road-155904083.jpg.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/shanghai-morning-city-landscape-empty-asphalt-road-shanghai-morning-city-landscape-asphalt-road-155904083.jpg.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-bs4TMBeXd6BZC2hA9bz3bv">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-ekFqxUvsnzTwJGQeZCNars">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-FRVn3rV6c8YoUYnuGyTRgp" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-gQyEfRbBkdtkzHiqKtUgya" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">3</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/12.jpg.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/12.jpg.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-FRVn3rV6c8YoUYnuGyTRgp">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-gQyEfRbBkdtkzHiqKtUgya">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-iDrNLDQLCFnAv8CjULBrhp" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-cMrMmK5XPQCRxJQdh9LfRB" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">4</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/route-deserte-montagnes-arriere-plan-dans-paysage-aride-iles-canaries-fuerteventura_462054-226.jpg.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/route-deserte-montagnes-arriere-plan-dans-paysage-aride-iles-canaries-fuerteventura_462054-226.jpg.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-iDrNLDQLCFnAv8CjULBrhp">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-cMrMmK5XPQCRxJQdh9LfRB">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-iuhYRrWtFfCFtAya79BuzM" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-ZnGQiXAAj6Qoet6bVasPJE" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">5</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/photo1.jpeg.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/photo1.jpeg.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-iuhYRrWtFfCFtAya79BuzM">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-ZnGQiXAAj6Qoet6bVasPJE">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-DKkkuaAMPQXcouSBKoXYFb" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-PqAMbwuW9WNr6VTGjWy4Ye" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">6</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/2._MAD_12003_Chaoyang_Park_Plaza_i_02_overview_with_city_context.jpg.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/2._MAD_12003_Chaoyang_Park_Plaza_i_02_overview_with_city_context.jpg.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-DKkkuaAMPQXcouSBKoXYFb">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-PqAMbwuW9WNr6VTGjWy4Ye">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-SNCS3sCntzzjcHHXCcoNqk" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-gAsdyUs646AHxmqxGQJmLP" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">7</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/ml_elcamino_ontheroad_02_0.jpg.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/ml_elcamino_ontheroad_02_0.jpg.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-SNCS3sCntzzjcHHXCcoNqk">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-gAsdyUs646AHxmqxGQJmLP">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-ZGunkDPw43uVzTCFyvVUs2" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-jaiy6LCUuGuvBA9xSTrwds" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">8</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/On-the-Road.png.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/On-the-Road.png.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-ZGunkDPw43uVzTCFyvVUs2">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-jaiy6LCUuGuvBA9xSTrwds">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-AKUkenvT8ZL7wCEpPxVKmf" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-jPUzM9yQAzQQfXDUFCnQNG" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">9</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/635x487_100_300_000000x10x0.png.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/635x487_100_300_000000x10x0.png.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-AKUkenvT8ZL7wCEpPxVKmf">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-jPUzM9yQAzQQfXDUFCnQNG">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-Eo3FowLJoo28pucGUn9x7m" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-JXzQeCBbpdHK8WEJWniekb" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">10</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/ryan-schroeder-Gg7uKdHFb_c-unsplash.jpg.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/ryan-schroeder-Gg7uKdHFb_c-unsplash.jpg.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-Eo3FowLJoo28pucGUn9x7m">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-JXzQeCBbpdHK8WEJWniekb">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-ZvbBzckMKj9tAkh8HZCU5H" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-eMV7mazabHkVVuCybMCEyU" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">11</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/exemple1.png.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/exemple1.png.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-ZvbBzckMKj9tAkh8HZCU5H">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-eMV7mazabHkVVuCybMCEyU">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
     </div>
     
-    <div class="ipyplot-placeholder-div-WDdsxbi7RrhtHWRmFyNASf">
-        <div id="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-f2LQ5obnS9uL4D5QB2AENN" class="ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf">
+    <div class="ipyplot-placeholder-div-fFHTEptvku6FhtBYgqNEoo">
+        <div id="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-9kJNBMyvorriCsDjDSJ5ew" class="ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo">
             <h4 style="font-size: 12px; word-wrap: break-word;" class="anchored">12</h4>
             <h4 style="font-size: 9px; padding-left: 10px; padding-right: 10px; width: 95%; word-wrap: break-word; white-space: normal;" class="anchored">01_DeepLearning/TestImagesUnetResults/ResNet18/patrick-tomasso-SVVTZtTGyaU-unsplash.jpg.UnetComposite.jpg</h4><img src="01_DeepLearning/TestImagesUnetResults/ResNet18/patrick-tomasso-SVVTZtTGyaU-unsplash.jpg.UnetComposite.jpg">
             <a href="#!">
                 <span class="ipyplot-img-close">
             </span></a>
-            <a href="#ipyplot-content-div-WDdsxbi7RrhtHWRmFyNASf-f2LQ5obnS9uL4D5QB2AENN">
+            <a href="#ipyplot-content-div-fFHTEptvku6FhtBYgqNEoo-9kJNBMyvorriCsDjDSJ5ew">
                 <span class="ipyplot-img-expand">
             </span></a>
         </div>
@@ -1344,6 +1359,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
 </div>
 </div>
+</section>
 <section id="dataset-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="dataset-preparation">Dataset Preparation</h2>
 <p><strong>00_Dataset</strong> contains scripts and notebook to generate binary mask images from Coco and ADE20K dataset</p>
@@ -1400,7 +1416,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>On the test images, resnet18 Unet training seems to perform more consistently compared to resnet34. This is unexpected and does not match the objective performance measures.</li>
 </ul>
-<p>Resnet18: <img src="./01_DeepLearning/TestImagesUnetResults/ResNet18/route-deserte-montagnes-arriere-plan-dans-paysage-aride-iles-canaries-fuerteventura_462054-226.jpg.UnetComposite.jpg" width="30%" height="30%"> Resnet34: <img src="./01_DeepLearning/TestImagesUnetResults/ResNet34/route-deserte-montagnes-arriere-plan-dans-paysage-aride-iles-canaries-fuerteventura_462054-226.jpg.UnetComposite.jpg" width="30%" height="30%"></p>
+<p>Resnet18: <img src="./01_DeepLearning/TestImagesUnetResults/ResNet18/route-deserte-montagnes-arriere-plan-dans-paysage-aride-iles-canaries-fuerteventura_462054-226.jpg.UnetComposite.jpg" width="80%" height="30%"></p>
+<p>Resnet34: <img src="./01_DeepLearning/TestImagesUnetResults/ResNet34/route-deserte-montagnes-arriere-plan-dans-paysage-aride-iles-canaries-fuerteventura_462054-226.jpg.UnetComposite.jpg" width="80%" height="30%"></p>
 </section>
 <section id="results-discussion" class="level3">
 <h3 class="anchored" data-anchor-id="results-discussion">Results discussion</h3>

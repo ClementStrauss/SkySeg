@@ -1,4 +1,6 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - 02_AutoGrabCut_Cpp/TestVideoCppResult/video.mp4
   render: ["report.ipynb"]
