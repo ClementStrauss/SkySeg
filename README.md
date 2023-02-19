@@ -3,7 +3,6 @@
 Report is here : 
 [report](report_pdf_export.pdf)
 
-
 # Repository Structure :
 
 ## 00_Dataset
@@ -22,3 +21,7 @@ conda env create -f environment.yml
 - Computer vision based sky segmentation, run near real time on 720p video  
 - Developped in C++. It needs to be compiled. Instructions included in folder    
 
+## TestImages, TestVideo
+- images and video for subjective testing.
+- Results on images are located in both **01_DeepLearning** and **02_AutoGrabCut_Cpp**
+- Results on the video is located in **02_AutoGrabCut_Cpp**
