@@ -8,3 +8,4 @@
 /00_Dataset/ADE20kSky/*
 /AutoGrabCut_Cpp/rgbImageList
 /02_AutoGrabCut_Cpp/build/
+/01_DeepLearning/.ipynb_checkpoints/**

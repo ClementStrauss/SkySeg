@@ -13,12 +13,12 @@
 using namespace std;
 using namespace cv;
 
-#define _DEBUG
+// #define _DEBUG
 
 struct AutoGrabCut
 {
 
-  int skyPercentageInImageForGrabCutInit = 33;
+  int skyPercentageInImageForGrabCutInit = 50;
   int genericInt = 5;
   int genericInt2 = 32;
 
@@ -183,13 +183,12 @@ public:
     Mat edges = detectEdges(src_gray);
     imshowDebug("edges", edges);
 
-
     int pyramideScale1 = scaling;
     int pyramideScale2 = scaling / 2;
 
     resize(imageInputBGR, bgrSmall, {imageInputBGR.cols / pyramideScale1, imageInputBGR.rows / pyramideScale1}, 0, 0, INTER_LANCZOS4);
     // blur(bgrSmall, bgrSmall, {3, 3});
-    //medianBlur(bgrSmall, bgrSmall, 3);
+    // medianBlur(bgrSmall, bgrSmall, 3);
     imshowDebug("bgrSmall", bgrSmall);
 
     resize(bgrSmall, bgrSmaller, {bgrSmall.cols / pyramideScale2, bgrSmall.rows / pyramideScale2}, 0, 0, INTER_LANCZOS4);
@@ -282,7 +281,7 @@ bool endsWith(const string &s, const string &suffix)
 
 int main(int argc, char *argv[])
 {
-  string filename = "/home/cstrauss/PERSO/StreamFlow/lofoten.mp4";
+  string filename = "";
   string outputFilename = "";
   if (argc > 1)
   {
@@ -307,6 +306,8 @@ int main(int argc, char *argv[])
   ;
 
   VideoCapture cap;
+  VideoWriter videoWriter;
+
   namedWindow("Result", WINDOW_AUTOSIZE); // Create Window
 
   Mat image;
@@ -320,6 +321,10 @@ int main(int argc, char *argv[])
       cerr << "cannot open video " << filename << endl;
       throw;
     }
+    Mat firstImage;
+    cap.read(firstImage);
+    int codec = VideoWriter::fourcc('M', 'P', '4', 'V');
+    videoWriter.open(outputFilename, codec, 25, firstImage.size());
   }
   else
   {
@@ -349,30 +354,38 @@ int main(int argc, char *argv[])
 
     // imshow("Overlay", getImageWithMaskOverlay(image, mask, {140, 72, 15}));
     Mat result = getImageWithMaskOverlay(image, mask);
-    hconcat(image, result, result);
-    resize(result, result, Size(result.cols / 2, result.rows / 2));
+    Mat concat;
+    hconcat(image, result, concat);
+    resize(concat, concat, Size(concat.cols / 2, concat.rows / 2));
 
-    resize(mask, mask, Size(mask.cols / 2, mask.rows / 2));
-    if (result.cols > 1920)
+    if (concat.cols > 1920)
     {
-      resize(result, result, Size(result.cols / 2, result.rows / 2));
-      resize(mask, mask, Size(mask.cols / 2, mask.rows / 2));
+      resize(concat, concat, Size(concat.cols / 2, concat.rows / 2));
+      resize(mask, mask, Size(mask.cols / 4, mask.rows / 4));
     }
 
     mask = mask * 255;
     if (interactive)
     {
       imshow("sky mask", mask);
-      imshow("Result", result);
+      imshow("Result", concat);
       // imshow("input",image);
 
+      //videoWriter.write(result);
       key = waitKey(1);
     }
     else
     {
-      imwrite(outputFilename + ".CppMask.png", mask);
-      imwrite(outputFilename + ".CppComposite.jpg", result);
-      break;
+      if (isImage)
+      {
+        imwrite(outputFilename + ".CppMask.png", mask);
+        imwrite(outputFilename + ".CppComposite.jpg", result);
+        break;
+      }
+      else
+      {
+          videoWriter.write(result);
+      }
     }
   }
 

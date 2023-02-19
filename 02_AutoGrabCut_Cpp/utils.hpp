@@ -9,4 +9,4 @@
 using namespace std;
 using namespace cv;
 
-Mat getImageWithMaskOverlay(const Mat &image, Mat mask, Scalar color = cv::Scalar(0, 255, 0));
+Mat getImageWithMaskOverlay(const Mat &image, Mat mask, Scalar color = cv::Scalar(0, 0, 0));
