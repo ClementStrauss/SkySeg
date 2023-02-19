@@ -1,7 +1,7 @@
 # SkySegmenatation
 
 Report is here : 
-[report](report_pdf_export.pdf)
+[https://clementstrauss.github.io/SkySeg/](https://clementstrauss.github.io/SkySeg/)
 
 # Repository Structure :
 
@@ -25,3 +25,6 @@ conda env create -f environment.yml
 - images and video for subjective testing.
 - Results on images are located in both **01_DeepLearning** and **02_AutoGrabCut_Cpp**
 - Results on the video is located in **02_AutoGrabCut_Cpp**
+
+## report.ipynb
+- this is the notebook used to generate the report's web page, using quarto tool : https://quarto.org/
