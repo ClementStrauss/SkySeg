@@ -25,3 +25,6 @@ conda env create -f environment.yml
 - images and video for subjective testing.
 - Results on images are located in both **01_DeepLearning** and **02_AutoGrabCut_Cpp**
 - Results on the video is located in **02_AutoGrabCut_Cpp**
+
+## report.ipynb
+- this is the notebook use to generate the report web page, using quarto
