@@ -1,11 +1,10 @@
 #include "AutoGrabCut.hpp"
 #include "utils.hpp"
 
-
 /**
  * @brief Run the full sky segmentation on RGB image
- * 
- * @param imageInputBGR 
+ *
+ * @param imageInputBGR
  * @return Mat  Binary mask image, 255 in the sky, 0 otherwise
  */
 Mat AutoGrabCut::runAutoSkySegmentation(const Mat &imageInputBGR)
@@ -17,6 +16,12 @@ Mat AutoGrabCut::runAutoSkySegmentation(const Mat &imageInputBGR)
 
     int pyramideScale1 = scaling;
     int pyramideScale2 = scaling / 2;
+
+    if (imageInputBGR.cols > 1920)
+    {
+        pyramideScale1 = pyramideScale1 * 2;
+        pyramideScale2 = pyramideScale2 * 2;
+    }
 
     resize(imageInputBGR, bgrSmall, {imageInputBGR.cols / pyramideScale1, imageInputBGR.rows / pyramideScale1}, 0, 0, INTER_LANCZOS4);
     // blur(bgrSmall, bgrSmall, {3, 3});

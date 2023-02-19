@@ -13,7 +13,7 @@ class AutoGrabCut
 public:
     int skyPercentageInImageForGrabCutInit = 50; // how much sky is expected on top of the image
 
-    int scaling = 4; // image scaling for image pyramid
+    int scaling = 8; // image scaling for image pyramid
 
     Mat bgrSmall;   // image pyramid  1
     Mat bgrSmaller; // image pyramid  2 even smaller
