@@ -217,6 +217,7 @@ dependencies:
     - hypercorn==0.14.3
     - hyperframe==6.0.1
     - imageio==2.25.1
+    - ipyplot==1.1.1
     - jmespath==1.0.1
     - kaleido==0.2.1
     - mightymosaic==1.2.3
@@ -239,6 +240,7 @@ dependencies:
     - rfc3986==1.5.0
     - s3transfer==0.6.0
     - scikit-image==0.19.3
+    - shortuuid==1.0.11
     - sortedcontainers==2.4.0
     - sse-starlette==0.10.3
     - sseclient-py==1.7.2
