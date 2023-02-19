@@ -1,7 +1,7 @@
 # SkySegmenatation
 
 Report is here : 
-[report](report_pdf_export.pdf)
+[https://clementstrauss.github.io/SkySeg/](https://clementstrauss.github.io/SkySeg/)
 
 # Repository Structure :
 
