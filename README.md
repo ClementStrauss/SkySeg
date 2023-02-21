@@ -13,8 +13,15 @@ Report is here :
 - checkout the train and evaluation notebook, and the report
 - should run fine with conda : 
 
+
+Edit 02/21/2023 : something is broken in the last fastai version (2.7.11)
+
 ```
-conda env create -f environment.yml
+conda create --name fast python=3.9
+conda activate fast
+conda install -c fastchan fastai==2.7.10
+conda install jupyterlab
+pip install opencv-python
 ```
 
 ## 02_AutoGrabCut_Cpp
@@ -28,12 +35,3 @@ conda env create -f environment.yml
 
 ## report.ipynb
 - this is the notebook used to generate the report's web page, using quarto tool : https://quarto.org/
-
-
-
-conda create --name fast python=3.9
-conda activate fast
-conda install -c fastchan fastai==2.7.10
-conda install jupyterlab
-pip install opencv-python
-pip install pillow==9.4.0
