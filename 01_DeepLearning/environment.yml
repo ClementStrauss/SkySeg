@@ -1,9 +1,16 @@
 name: progo
 channels:
-  - defaults
   - fastchan
+  - pytorch
+  - nvidia
 dependencies:
   - python=3.9
-  - fastai
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.7
   - jupyterlab
   - autopep8
+  - pip :
+    - fastai==2.7.10
+    - opencv-python

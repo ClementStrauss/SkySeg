@@ -28,3 +28,12 @@ conda env create -f environment.yml
 
 ## report.ipynb
 - this is the notebook used to generate the report's web page, using quarto tool : https://quarto.org/
+
+
+
+conda create --name fast python=3.9
+conda activate fast
+conda install -c fastchan fastai==2.7.10
+conda install jupyterlab
+pip install opencv-python
+pip install pillow==9.4.0
