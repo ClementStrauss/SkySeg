@@ -8,7 +8,7 @@
  * @param xPos x position of the frame image where the image will start.
  * @param yPos y position of the frame image where the image will start.
  */
-void drawTransparency(Mat frame, Mat transp, int xPos, int yPos)
+void drawTransparency(Mat& frame, Mat& transp, int xPos, int yPos)
 {
   Mat mask;
   vector<Mat> layers;
@@ -69,7 +69,7 @@ Mat getImageWithMaskOverlay(const Mat &image, Mat mask, Scalar color)
  * @param src_gray 
  * @return Mat binary edge mask, 255 on edges
  */
-Mat detectEdges(const Mat &src_gray)
+Mat detectEdges(Mat src_gray)
 {
   Mat grad_x, grad_y, edges;
   blur(src_gray, src_gray, Size(5, 5));
@@ -101,9 +101,15 @@ Mat detectEdges(const Mat &src_gray)
  * @param name 
  * @param img 
  */
-void imshowDebug(String name, Mat img)
+void imshowDebug(String name, const Mat& img)
 {
 #ifdef _DEBUG
   imshow(name, img);
 #endif
+}
+
+
+bool endsWith(const string &s, const string &suffix)
+{
+  return s.size() >= suffix.size() && s.rfind(suffix) == (s.size() - suffix.size());
 }

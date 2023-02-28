@@ -40,7 +40,7 @@ Mat AutoGrabCut::runAutoSkySegmentation(const Mat &imageInputBGR)
     Rect rect(0, 0, bgrSmaller.cols, bgrSmaller.rows * skyPercentageInImageForGrabCutInit / 100.);
     rectangle(mask, rect, GC_PR_FGD, -1); // set the top as probable foreground == sky
 
-    // remove edges from probabble sky
+    // remove edges from probable sky
     Mat edges_small;
     resize(edges, edges_small, {mask.cols, mask.rows}, 0, 0, INTER_NEAREST);
     // mask should be GC_PR_BGD = 2,  //!< a possible background pixel where there is an edge
@@ -60,7 +60,7 @@ Mat AutoGrabCut::runAutoSkySegmentation(const Mat &imageInputBGR)
 
     resize(edges, edges_small, {mask.cols, mask.rows}, 0, 0, INTER_NEAREST);
     // mask should be GC_PR_BGD = 2,  //!< a possible background pixel where there is an edge
-    mask = mask - edges_small + edges_small / 128;
+    mask = mask - edges_small + edges_small / 128; // mask is zeroed at edge, then + 2 at egde (255/128) == GC_PR_BGD == 2
 
     erode(mask, mask, element3);
     imshowDebug("mask eroded", mask * 64);

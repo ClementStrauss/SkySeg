@@ -26,9 +26,7 @@ public:
     Mat detected_edges;
     Mat src_gray;
 
-    Mat element7 = getStructuringElement(MORPH_RECT, Size(7, 7));
-    Mat element5 = getStructuringElement(MORPH_RECT, Size(5, 5));
-    Mat element3 = getStructuringElement(MORPH_RECT, Size(3, 3));
+    const Mat element3 = getStructuringElement(MORPH_RECT, Size(3, 3));
 
     // some call back for the opencv slider
     static void cb_sky(int value, void *ptr)
@@ -36,26 +34,6 @@ public:
         auto T = (AutoGrabCut *)ptr;
         T->skyPercentageInImageForGrabCutInit = value;
     }
-
-    // static void cb_generic_forceImpair(int value, void *ptr)
-    // {
-    //     auto T = (AutoGrabCut *)ptr;
-    //     if (value % 2 == 0)
-    //         value += 1;
-    //     T->genericInt = max(3, value);
-    // }
-
-    // static void cb_generic(int value, void *ptr)
-    // {
-    //     auto T = (AutoGrabCut *)ptr;
-    //     T->genericInt = max(1, value);
-    // }
-
-    // static void cb_generic2(int value, void *ptr)
-    // {
-    //     auto T = (AutoGrabCut *)ptr;
-    //     T->genericInt2 = max(1, value);
-    // }
 
     static void cb_scaling(int value, void *ptr)
     {
@@ -67,8 +45,6 @@ public:
     AutoGrabCut()
     {
         createTrackbar("Sky Percentage initialization", "Result", &skyPercentageInImageForGrabCutInit, 100, cb_sky, this);
-        // createTrackbar("Generic Int", "Result", &genericInt, 255, cb_generic, this);
-        // createTrackbar("Generic Int2", "Result", &genericInt2, 255, cb_generic2, this);
         createTrackbar("Image Down Scaling", "Result", &scaling, 16, cb_scaling, this);
     }
 

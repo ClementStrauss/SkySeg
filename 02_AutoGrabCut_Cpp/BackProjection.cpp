@@ -49,7 +49,6 @@ Mat histogramBackProject(const Mat &image, Mat mask)
              false);
 
     // normalize histogram 0 - 255
-    // int maskArea = countNonZero(mask);
     hist = (hist * 255) / sum(hist);
 
     // cout << sum(hist) << " " << endl;

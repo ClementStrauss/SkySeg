@@ -16,12 +16,6 @@ using namespace cv;
 
 // #define _DEBUG
 
-
-bool endsWith(const string &s, const string &suffix)
-{
-  return s.size() >= suffix.size() && s.rfind(suffix) == (s.size() - suffix.size());
-}
-
 int main(int argc, char *argv[])
 {
   string filename = "";
